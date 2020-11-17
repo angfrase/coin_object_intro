@@ -5,7 +5,7 @@ let coin = {
            0 or 1: use "this.state" to access the "state" property on this object.*/
          this.state=(Math.floor(Math.random()* 2));   
          return this.state;  
-         console.log(this.state)
+        //  console.log(this.state)
 
     },
     toString: function() {
@@ -13,6 +13,7 @@ let coin = {
            "this.state" is 0 or 1. */
            if (this.state === 0) {
            return "tails"
+        } else{
                return  "heads"
            }
     
@@ -26,11 +27,12 @@ let coin = {
         /* 3. Set the properties of this image element to show either face-up
            or face-down, depending on whether this.state is 0 or 1.*/
            if (this.state ===1) {
-               return image.src = "./assets/heads.png"
+             image.src = "./assets/heads.png"
            } else {
                image.src = "./assets/tails.png"
            }
            return image;
+        //    console.log (images)
            /* state is 0 
             else state is 1
            set image to heads
@@ -41,7 +43,7 @@ let coin = {
 /*console.log (coin.toString());
 console.log(coin.toString());*/
 
-const display20Flips = (coin) => {
+const display20Flips = () => {
     for (let i = 0;i < 20; i++) {
         coin.flip()
         let p= document.createElement ('p')
@@ -54,7 +56,7 @@ const display20Flips = (coin) => {
       (make use of your toString() method)*/
 }
 
-const display20Images = ( coin) =>{
+const display20Images = () =>{
     for (let i=0; i < 20; i++) {
         coin.flip()
         document.body.appendChild(coin.toHTML())
@@ -68,3 +70,5 @@ const display20Images = ( coin) =>{
 console.log (coin.flip());
 console.log(coin.toString());
 console.log (coin.toHTML());
+display20Flips()
+display20Images()
